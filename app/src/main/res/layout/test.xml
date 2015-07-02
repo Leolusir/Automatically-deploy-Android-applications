@@ -1,10 +1,3 @@
-# Automatically-deploy-Android-applications
-The server came xml format description, client resolver interface automatically escapes
-
-
-Describe your interface
-
-```
 <linearlayout
     background="#3225FF">
 
@@ -25,10 +18,3 @@ Describe your interface
     </text>
 
 </linearlayout>
-```
-
-then will Automated assembly
-
-```
-
-```
