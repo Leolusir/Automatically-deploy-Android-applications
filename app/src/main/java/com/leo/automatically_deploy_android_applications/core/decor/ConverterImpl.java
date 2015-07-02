@@ -42,12 +42,32 @@ public class ConverterImpl extends Converter{
     }
 
     @Override
+    View toCardView(View view, String attrs) {
+        return null;
+    }
+
+    @Override
+    View toViewPager(View view, String attrs) {
+        return null;
+    }
+
+    @Override
     View toLayout(View view, Map<String, String> attrs) {
         if(view instanceof ALinearLayout){
 
         }
 
         return view;
+    }
+
+    @Override
+    View toLinearLayout(View view, String attrs) {
+        return null;
+    }
+
+    @Override
+    View toRelativeLayout(View view, String attrs) {
+        return null;
     }
 
     @Override
@@ -61,5 +81,20 @@ public class ConverterImpl extends Converter{
         }
 
         return view;
+    }
+
+    @Override
+    View toButton(View view, String attrs) {
+        return null;
+    }
+
+    @Override
+    View toImageView(View view, String attrs) {
+        return null;
+    }
+
+    @Override
+    View toImageButton(View view, String attrs) {
+        return null;
     }
 }
