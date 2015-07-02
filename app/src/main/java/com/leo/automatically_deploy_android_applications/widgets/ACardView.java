@@ -7,6 +7,7 @@ import android.util.AttributeSet;
 /**
  * Created by littleming on 15/7/2.
  */
+@Deprecated
 public class ACardView extends CardView {
 
     public ACardView(Context context) {

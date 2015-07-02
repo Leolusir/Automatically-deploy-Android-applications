@@ -25,7 +25,7 @@ import java.util.Map;
  * Created by littleming on 15/7/2.
  */
 public class Generate {
-
+    private final String prefix = "com.leo.automatically_deploy_android_applications.widgets.";
     private Map<String, String> parserMap = new HashMap<>();
     static final Class<?>[] mConstructorSignature = new Class[] {Context.class, AttributeSet.class};
     private static final HashMap<String, Constructor<? extends View>> sConstructorMap =
@@ -82,10 +82,9 @@ public class Generate {
             final Object[] mConstructorArgs = new Object[2];
             mConstructorArgs[0] = context;
             mConstructorArgs[1] = attrs;
-            String prefix = "com.leo.automatically_deploy_android_applications.widgets.";
+
             try {
-                clazz = context.getClassLoader().loadClass(
-                        prefix != null ? (prefix + name) : name).asSubclass(View.class);
+                clazz = context.getClassLoader().loadClass(prefix != null ? (prefix + name) : name).asSubclass(View.class);
                 constructor = clazz.getConstructor(mConstructorSignature);
                 sConstructorMap.put(name, constructor);
                 constructor.setAccessible(true);

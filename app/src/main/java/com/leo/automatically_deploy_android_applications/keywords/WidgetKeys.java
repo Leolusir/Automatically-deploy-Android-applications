@@ -22,6 +22,8 @@ public class WidgetKeys {
     public static final String LIST_DES_TAG                 = "list";
     public static final String LIST_ANALYZE_TAG             = "ARecyclerView";
 
+
+
     public static final String BANNER_DES_TAG               = "banner";
     public static final String VIEWPAGER_DES_TAG            = "viewpager";
     public static final String VIEWPAGER_ANALYZE_TAG        = "AViewPager";
