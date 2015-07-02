@@ -32,7 +32,7 @@ Describe your interface
 
 then will Automated assembly
 
-[!image](https://github.com/Leolusir/Automatically-deploy-Android-applications/blob/master/image/img.png)
+![image](https://github.com/Leolusir/Automatically-deploy-Android-applications/blob/master/image/img.png)
 
 
 
