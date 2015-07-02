@@ -2,7 +2,7 @@ package com.leo.automatically_deploy_android_applications;
 
 import android.app.Application;
 
-import com.leo.automatically_deploy_android_applications.core.Generate;
+import com.leo.automatically_deploy_android_applications.core.decor.Generate;
 
 /**
  * Created by littleming on 15/7/2.

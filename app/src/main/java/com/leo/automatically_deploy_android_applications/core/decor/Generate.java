@@ -1,4 +1,4 @@
-package com.leo.automatically_deploy_android_applications.core;
+package com.leo.automatically_deploy_android_applications.core.decor;
 
 import android.content.Context;
 import android.content.res.XmlResourceParser;
@@ -35,6 +35,10 @@ public class Generate {
         parserMap.put(WidgetKeys.BUTTON_DES_TAG, WidgetKeys.BUTTON_ANALYZE_TAG);
         parserMap.put(WidgetKeys.TEXTVIEW_DES_TAG, WidgetKeys.TEXTVIEW_ANALYZE_TAG);
         parserMap.put(WidgetKeys.LINEARLAYOUT_DES_TAG, WidgetKeys.LINEARLAYOUT_ANALYZE_TAG);
+        parserMap.put(WidgetKeys.RELATIVELAYOUT_DES_TAG, WidgetKeys.RELATIVELAYOUT_ANALYZE_TAG);
+        parserMap.put(WidgetKeys.LIST_DES_TAG, WidgetKeys.LIST_ANALYZE_TAG);
+        parserMap.put(WidgetKeys.BANNER_DES_TAG, WidgetKeys.VIEWPAGER_ANALYZE_TAG);
+        parserMap.put(WidgetKeys.VIEWPAGER_DES_TAG, WidgetKeys.VIEWPAGER_ANALYZE_TAG);
     }
 
     public View generateView(Context context, int resId){
@@ -60,6 +64,7 @@ public class Generate {
         final int depth = parser.getDepth();
         int type;
 
+        //now just support linearlayout
         LinearLayout rootView = null;
 
         while (((type = parser.next()) != XmlPullParser.END_TAG ||
@@ -117,5 +122,6 @@ public class Generate {
         }
         return rootView;
     }
+
 
 }

@@ -7,6 +7,7 @@ import android.widget.RelativeLayout;
 /**
  * Created by littleming on 15/7/2.
  */
+@Deprecated
 public class ARelativeLayout extends RelativeLayout{
 
     public ARelativeLayout(Context context) {
