@@ -1,52 +1,88 @@
 # Automatically-deploy-Android-applications
+
+### TODO
 The server came xml format description, client resolver interface automatically escapes
 
+### Tip
 Now just a guess
-
 Welcome to exchange ideas - leo.lusir@gmail.com
 
+### Demo
 Describe your interface
 
 ```
-<root-linearlayout
-    backgroundColor="#3225FF"
+<scroll
     orientation="0">
 
-    <text
-        text="auto add 1"
-        textSize="20"
-        textColor="#ffffff">
-    </text>
-    <text
-        text="auto add 2"
-        textSize="24"
-        textColor="#ff0000">
-    </text>
-    <text
-        text="auto add 3"
-        textSize="28"
-        textColor="#00ff00">
-    </text>
-    <text
-        text="auto add 4"
-        textSize="32"
-        textColor="#FFFBB5">
-    </text>
-    <text
-        text="auto add 5"
-        textSize="36"
-        textColor="#CC4BFF">
-    </text>
+    <root-linearlayout
+        backgroundColor="#ececec"
+        orientation="0">
 
-</root-linearlayout>
+        <text
+            text="auto add 1"
+            textSize="20"
+            textColor="#fffb3a"
+            gravity="0">
+        </text>
+        <image
+            src="http://..."
+            scaleType="0">
+        </image>
+        <text
+            text="auto add 2"
+            textSize="24"
+            textColor="#ff0000"
+            gravity="0">
+        </text>
+        <image
+            src="http://..."
+            scaleType="0">
+        </image>
+        <text
+            text="auto add 3"
+            textSize="28"
+            textColor="#00ff00"
+            gravity="0">
+        </text>
+        <image
+            src="http://..."
+            scaleType="0">
+        </image>
+        <text
+            text="auto add 4"
+            textSize="32"
+            textColor="#FFFBB5"
+            gravity="0">
+        </text>
+        <image
+            src="http://..."
+            scaleType="0">
+        </image>
+        <text
+            text="auto add 5"
+            textSize="36"
+            textColor="#CC4BFF"
+            gravity="0">
+        </text>
+        <image
+            src="http://..."
+            scaleType="0">
+        </image>
+
+    </root-linearlayout>
+
+</scroll>
 ```
 
 then will Automated assembly
 
-![image](https://github.com/Leolusir/Automatically-deploy-Android-applications/blob/master/image/image.png)
+![image](https://github.com/Leolusir/Automatically-deploy-Android-applications/blob/master/image/image2.png)
 
 
 
+
+
+### License
 
 Copyright(c) 2015 leo
 
