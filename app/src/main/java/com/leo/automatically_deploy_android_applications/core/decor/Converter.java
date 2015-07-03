@@ -9,36 +9,36 @@ import org.xmlpull.v1.XmlPullParser;
  */
 public abstract class Converter {
 
-    /*列表布局*/
+    /*list*/
     abstract View toList(View view, XmlPullParser parser);
 
-    /*卡片布局*/
+    /*card*/
     abstract View toCardView(View view, XmlPullParser parser);
 
-    /*滑动布局*/
+    /*viewpager*/
     abstract View toViewPager(View view, XmlPullParser parser);
 
-    /*普通布局*/
+    /*layout*/
     abstract View toLayout(View view, XmlPullParser parser);
 
-    /*线性布局*/
+    /*linearLayout*/
     abstract View toLinearLayout(View view, XmlPullParser parser);
 
-    /*相对布局*/
+    /*relativeLayout*/
     abstract View toRelativeLayout(View view, XmlPullParser parser);
 
-    /*控件转化*/
+    /*widget*/
     abstract View toWidget(View view, XmlPullParser parser);
 
-    /*按钮*/
+    /*button*/
     abstract View toButton(View view, XmlPullParser parser);
 
-    /*文本*/
+    /*textView*/
     abstract View toTextView(View view, XmlPullParser parser);
 
-    /*图片*/
+    /*image*/
     abstract View toImageView(View view, XmlPullParser parser);
 
-    /*图片按钮*/
+    /*imageButton*/
     abstract View toImageButton(View view, XmlPullParser parser);
 }
