@@ -2,13 +2,11 @@ package com.leo.automatically_deploy_android_applications.core.decor;
 
 import android.content.Context;
 import android.content.res.XmlResourceParser;
-import android.graphics.Color;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.util.Xml;
 import android.view.View;
-import android.widget.LinearLayout;
-import android.widget.TextView;
+import android.view.ViewGroup;
 
 import com.leo.automatically_deploy_android_applications.keywords.WidgetKeys;
 
@@ -25,6 +23,8 @@ import java.util.Map;
  * Created by littleming on 15/7/2.
  */
 public class Generate {
+    private ConverterImpl converter;
+
     private final String prefix = "com.leo.automatically_deploy_android_applications.widgets.";
     private Map<String, String> parserMap = new HashMap<>();
     static final Class<?>[] mConstructorSignature = new Class[] {Context.class, AttributeSet.class};
@@ -32,9 +32,13 @@ public class Generate {
             new HashMap<>();
 
     public void init(){
+        converter = new ConverterImpl();
+        converter.init();
         parserMap.put(WidgetKeys.BUTTON_DES_TAG, WidgetKeys.BUTTON_ANALYZE_TAG);
         parserMap.put(WidgetKeys.TEXTVIEW_DES_TAG, WidgetKeys.TEXTVIEW_ANALYZE_TAG);
+        parserMap.put(WidgetKeys.IMAGE_DES_TAG, WidgetKeys.IMAGE_ANALYZE_TAG);
         parserMap.put(WidgetKeys.LINEARLAYOUT_DES_TAG, WidgetKeys.LINEARLAYOUT_ANALYZE_TAG);
+        parserMap.put(WidgetKeys.ROOT_LINEARLAYOUT_DES_TAG, WidgetKeys.LINEARLAYOUT_ANALYZE_TAG);
         parserMap.put(WidgetKeys.RELATIVELAYOUT_DES_TAG, WidgetKeys.RELATIVELAYOUT_ANALYZE_TAG);
         parserMap.put(WidgetKeys.LIST_DES_TAG, WidgetKeys.LIST_ANALYZE_TAG);
         parserMap.put(WidgetKeys.BANNER_DES_TAG, WidgetKeys.VIEWPAGER_ANALYZE_TAG);
@@ -65,7 +69,7 @@ public class Generate {
         int type;
 
         //now just support linearlayout
-        LinearLayout rootView = null;
+        ViewGroup rootView = null;
 
         while (((type = parser.next()) != XmlPullParser.END_TAG ||
                 parser.getDepth() > depth) && type != XmlPullParser.END_DOCUMENT) {
@@ -74,6 +78,7 @@ public class Generate {
                 continue;
             }
 
+            final String des  = parser.getName();
             final String name = parserMap.get(parser.getName());
             Log.i("item", name + "");
 
@@ -90,19 +95,14 @@ public class Generate {
                 constructor.setAccessible(true);
                 View view = constructor.newInstance(mConstructorArgs);
                 Log.i("view", view.getClass().getSimpleName() + "");
-                if(name.contains("Layout")){
-                    rootView = (LinearLayout)view;
-                    rootView.setOrientation(LinearLayout.VERTICAL);
-                    rootView.setBackgroundColor(Color.parseColor(parser.getAttributeValue(0)));
-                    Log.i("add", "add");
+                if(des.contains("root")){
+                    rootView = (ViewGroup)converter.converterView(view, parser);
+                    Log.i("add", "add_root_view");
                 }else{
-                    TextView tview = (TextView)view;
-                    tview.setText(parser.getAttributeValue(0));
-                    tview.setTextColor(Color.WHITE);
-
+                    View childView = converter.converterView(view, parser);
                     if(rootView != null){
-                        Log.i("add", "add");
-                        rootView.addView(tview);
+                        Log.i("add", "add_child_view");
+                        rootView.addView(childView);
                     }
                 }
             } catch (ClassNotFoundException e) {

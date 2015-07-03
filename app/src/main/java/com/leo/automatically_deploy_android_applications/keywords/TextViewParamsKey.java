@@ -5,8 +5,11 @@ package com.leo.automatically_deploy_android_applications.keywords;
  */
 public class TextViewParamsKey {
 
-    public static final String TEXTVIEW_TEXT = "text";
-    public static final String TEXTVIEW_TEXT_SIZE = "textSize";
-    public static final String TEXTVIEW_TEXT_COLOR = "textColor";
+    public static final String TEXTVIEW_TEXT_DES        = "text";
+    public static final int    TEXTVIEW_TEXT            = 1;
+    public static final String TEXTVIEW_TEXT_SIZE_DES   = "textSize";
+    public static final int    TEXTVIEW_TEXT_SIZE       = 2;
+    public static final String TEXTVIEW_TEXT_COLOR_DES  = "textColor";
+    public static final int    TEXTVIEW_TEXT_COLOR      = 3;
 
 }

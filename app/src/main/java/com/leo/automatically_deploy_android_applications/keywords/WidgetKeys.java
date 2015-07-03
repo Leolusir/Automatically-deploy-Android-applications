@@ -11,7 +11,11 @@ public class WidgetKeys {
     public static final String TEXTVIEW_DES_TAG             = "text";
     public static final String TEXTVIEW_ANALYZE_TAG         = "ATextView";
 
+    public static final String IMAGE_DES_TAG                = "image";
+    public static final String IMAGE_ANALYZE_TAG            = "AImageView";
+
     public static final String LINEARLAYOUT_DES_TAG         = "linearlayout";
+    public static final String ROOT_LINEARLAYOUT_DES_TAG    = "root-linearlayout";
     public static final String LINEARLAYOUT_ANALYZE_TAG     = "ALinearLayout";
 
     @Deprecated
@@ -21,8 +25,6 @@ public class WidgetKeys {
 
     public static final String LIST_DES_TAG                 = "list";
     public static final String LIST_ANALYZE_TAG             = "ARecyclerView";
-
-
 
     public static final String BANNER_DES_TAG               = "banner";
     public static final String VIEWPAGER_DES_TAG            = "viewpager";
