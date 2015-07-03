@@ -18,6 +18,9 @@ public abstract class Converter {
     /*viewpager*/
     abstract View toViewPager(View view, XmlPullParser parser);
 
+    /*scrollView*/
+    abstract View toScrollView(View view, XmlPullParser parser);
+
     /*layout*/
     abstract View toLayout(View view, XmlPullParser parser);
 

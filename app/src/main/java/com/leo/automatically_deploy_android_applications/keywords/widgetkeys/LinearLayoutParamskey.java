@@ -1,4 +1,4 @@
-package com.leo.automatically_deploy_android_applications.keywords;
+package com.leo.automatically_deploy_android_applications.keywords.widgetkeys;
 
 /**
  * Created by littleming on 15/7/3.

@@ -30,4 +30,6 @@ public class WidgetKeys {
     public static final String VIEWPAGER_DES_TAG            = "viewpager";
     public static final String VIEWPAGER_ANALYZE_TAG        = "AViewPager";
 
+    public static final String SCROLL_VIEW_DES_TAG          = "";
+    public static final String SCROLL_VIEW_ANALYZE_TAG      = "";
 }
