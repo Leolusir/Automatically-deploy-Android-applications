@@ -8,31 +8,42 @@ Welcome to exchange ideas - leo.lusir@gmail.com
 Describe your interface
 
 ```
-<linearlayout
-    background="#3225FF">
+<root-linearlayout
+    backgroundColor="#3225FF"
+    orientation="0">
 
     <text
-        text="auto add 1">
+        text="auto add 1"
+        textSize="20"
+        textColor="#ffffff">
     </text>
     <text
-        text="auto add 2">
+        text="auto add 2"
+        textSize="24"
+        textColor="#ff0000">
     </text>
     <text
-        text="auto add 3">
+        text="auto add 3"
+        textSize="28"
+        textColor="#00ff00">
     </text>
     <text
-        text="auto add 4">
+        text="auto add 4"
+        textSize="32"
+        textColor="#FFFBB5">
     </text>
     <text
-        text="auto add 5">
+        text="auto add 5"
+        textSize="36"
+        textColor="#CC4BFF">
     </text>
 
-</linearlayout>
+</root-linearlayout>
 ```
 
 then will Automated assembly
 
-![image](https://github.com/Leolusir/Automatically-deploy-Android-applications/blob/master/image/img.png)
+![image](https://github.com/Leolusir/Automatically-deploy-Android-applications/blob/master/image/image.png)
 
 
 
