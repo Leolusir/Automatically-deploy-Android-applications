@@ -4,7 +4,7 @@
 The server came xml format description, client resolver interface automatically escapes
 
 ### Tip
-Now just a guess
+Now just a guess,
 Welcome to exchange ideas - leo.lusir@gmail.com
 
 ### Demo
