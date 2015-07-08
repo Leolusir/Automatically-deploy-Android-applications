@@ -11,10 +11,7 @@ Welcome to exchange ideas - leo.lusir@gmail.com
 Describe your interface
 
 ```
-<scroll
-    orientation="0">
-
-    <root-linearlayout
+    <layout-linear
         backgroundColor="#ececec"
         orientation="0">
 
@@ -69,9 +66,7 @@ Describe your interface
             scaleType="0">
         </image>
 
-    </root-linearlayout>
-
-</scroll>
+    </layout-linear>
 ```
 
 then will Automated assembly
