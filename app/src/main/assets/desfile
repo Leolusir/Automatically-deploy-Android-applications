@@ -1,0 +1,85 @@
+    <layout-linear
+        backgroundColor="#ececec"
+        orientation="0">
+
+        <Item>
+            <text
+                text="auto add 1"
+                textSize="20"
+                textColor="#000000"
+                gravity="0">
+            </text>
+        </Item>
+
+        <Item>
+            <image
+                src="http://..."
+                scaleType="1">
+            </image>
+        </Item>
+
+        <Item>
+            <text
+                text="auto add 2"
+                textSize="24"
+                textColor="#000000"
+                gravity="0">
+            </text>
+        </Item>
+
+        <Item>
+            <image
+                src="http://..."
+                scaleType="1">
+            </image>
+        </Item>
+
+        <Item>
+            <text
+                text="auto add 3"
+                textSize="28"
+                textColor="#000000"
+                gravity="0">
+            </text>
+        </Item>
+
+        <Item>
+            <image
+                src="http://..."
+                scaleType="1">
+            </image>
+        </Item>
+
+        <Item>
+            <text
+                text="auto add 4"
+                textSize="32"
+                textColor="#000000"
+                gravity="0">
+            </text>
+        </Item>
+
+        <Item>
+            <image
+                src="http://..."
+                scaleType="1">
+            </image>
+        </Item>
+
+        <Item>
+            <text
+                text="auto add 5"
+                textSize="36"
+                textColor="#000000"
+                gravity="0">
+            </text>
+        </Item>
+
+        <Item>
+            <image
+                src="http://..."
+                scaleType="1">
+            </image>
+        </Item>
+
+    </layout-linear>

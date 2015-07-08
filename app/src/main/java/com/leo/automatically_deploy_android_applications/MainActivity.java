@@ -10,7 +10,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(App.getInstance().getGenerate().generateView(this, R.layout.test));
+        setContentView(App.getInstance().getGenerate().generateView(this));
     }
 
     @Override

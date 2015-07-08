@@ -11,4 +11,7 @@ public class ImageViewParamsKey {
     public static final String IMAGEVIEW_SCALETYPE_TAG = "scaleType";
     public static final int    IMAGEVIEW_SCALETYPE = 2;
 
+    public static final String IMAGEVIEW_EDGE_TAG = "edge";
+    public static final int    IMAGEVIEW_EDGE = 3;
+
 }

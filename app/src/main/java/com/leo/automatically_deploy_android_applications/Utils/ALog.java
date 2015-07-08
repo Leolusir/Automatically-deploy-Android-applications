@@ -13,4 +13,9 @@ public class ALog {
             Log.i(arg1, arg2);
     }
 
+    public static void e(String arg1, String arg2){
+        if(canLog)
+            Log.e(arg1, arg2);
+    }
+
 }

@@ -1,5 +1,6 @@
 package com.leo.automatically_deploy_android_applications.core.decor;
 
+import android.content.Context;
 import android.graphics.Color;
 import android.text.TextUtils;
 import android.view.Gravity;
@@ -12,6 +13,7 @@ import com.leo.automatically_deploy_android_applications.Utils.ALog;
 import com.leo.automatically_deploy_android_applications.keywords.paramsvaluekeys.GravityKey;
 import com.leo.automatically_deploy_android_applications.keywords.paramsvaluekeys.OrientationKey;
 import com.leo.automatically_deploy_android_applications.keywords.paramsvaluekeys.ScaleTypekey;
+import com.leo.automatically_deploy_android_applications.keywords.widgetkeys.CommonLayoutParamsKey;
 import com.leo.automatically_deploy_android_applications.keywords.widgetkeys.ImageViewParamsKey;
 import com.leo.automatically_deploy_android_applications.keywords.widgetkeys.LinearLayoutParamskey;
 import com.leo.automatically_deploy_android_applications.keywords.widgetkeys.ScrollViewParamsKey;
@@ -22,7 +24,6 @@ import com.leo.automatically_deploy_android_applications.widgets.AImageView;
 import com.leo.automatically_deploy_android_applications.widgets.ALinearLayout;
 import com.leo.automatically_deploy_android_applications.widgets.ARecyclerView;
 import com.leo.automatically_deploy_android_applications.widgets.ARelativeLayout;
-import com.leo.automatically_deploy_android_applications.widgets.AScrollView;
 import com.leo.automatically_deploy_android_applications.widgets.ATextView;
 import com.leo.automatically_deploy_android_applications.widgets.AViewPager;
 import com.nostra13.universalimageloader.core.ImageLoader;
@@ -36,12 +37,27 @@ import java.util.Map;
  * Created by littleming on 15/7/2.
  */
 public class ConverterImpl extends Converter{
+    private Context context;
+
+    private Map<String, Integer> commonLayoutParamsMap = new HashMap<>();
     private Map<String, Integer> linearLayoutParamsMap = new HashMap<>();
     private Map<String, Integer> textViewParamsMap = new HashMap<>();
     private Map<String, Integer> imageViewParamsMap = new HashMap<>();
     private Map<String, Integer> scrollViewParamsMap = new HashMap<>();
 
-    void init(){
+    void init(Context context){
+        this.context = context;
+        commonLayoutParamsMap.put(CommonLayoutParamsKey.LAYOUT_PARAMS_WIDTH_DES, CommonLayoutParamsKey.LAYOUT_PARAMS_WIDTH);
+        commonLayoutParamsMap.put(CommonLayoutParamsKey.LAYOUT_PARAMS_HEIGHT_DES, CommonLayoutParamsKey.LAYOUT_PARAMS_HEIGHT);
+        commonLayoutParamsMap.put(CommonLayoutParamsKey.LAYOUT_PARAMS_MARGIN_LEFT_DES, CommonLayoutParamsKey.LAYOUT_PARAMS_MARGIN_LEFT);
+        commonLayoutParamsMap.put(CommonLayoutParamsKey.LAYOUT_PARAMS_MARGIN_TOP_DES, CommonLayoutParamsKey.LAYOUT_PARAMS_MARGIN_TOP);
+        commonLayoutParamsMap.put(CommonLayoutParamsKey.LAYOUT_PARAMS_MARGIN_RIGHT_DES, CommonLayoutParamsKey.LAYOUT_PARAMS_MARGIN_RIGHT);
+        commonLayoutParamsMap.put(CommonLayoutParamsKey.LAYOUT_PARAMS_MARGIN_BOTTOM_DES, CommonLayoutParamsKey.LAYOUT_PARAMS_MARGIN_BOTTOM);
+        commonLayoutParamsMap.put(CommonLayoutParamsKey.LAYOUT_PARAMS_PADDING_LEFT_DES, CommonLayoutParamsKey.LAYOUT_PARAMS_PADDING_LEFT);
+        commonLayoutParamsMap.put(CommonLayoutParamsKey.LAYOUT_PARAMS_PADDING_TOP_DES, CommonLayoutParamsKey.LAYOUT_PARAMS_PADDING_TOP);
+        commonLayoutParamsMap.put(CommonLayoutParamsKey.LAYOUT_PARAMS_PADDING_RIGHT_DES, CommonLayoutParamsKey.LAYOUT_PARAMS_PADDING_RIGHT);
+        commonLayoutParamsMap.put(CommonLayoutParamsKey.LAYOUT_PARAMS_PADDING_BOTTOM_DES, CommonLayoutParamsKey.LAYOUT_PARAMS_PADDING_BOTTOM);
+
         linearLayoutParamsMap.put(LinearLayoutParamskey.BACKGROUND_COLOR_DES, LinearLayoutParamskey.BACKGROUND_COLOR);
         linearLayoutParamsMap.put(LinearLayoutParamskey.ORIENTATION_DES, LinearLayoutParamskey.ORIENTATION);
 
@@ -77,6 +93,34 @@ public class ConverterImpl extends Converter{
         return v;
     }
 
+    private void renderCommonParams(View view, int arg, String attrsValue, LinearLayout.LayoutParams lp){
+        switch (arg) {
+            case CommonLayoutParamsKey.LAYOUT_PARAMS_WIDTH :
+                lp.width = px2dip(Integer.parseInt(attrsValue), context);
+                break;
+            case CommonLayoutParamsKey.LAYOUT_PARAMS_HEIGHT :
+                lp.height = px2dip(Integer.parseInt(attrsValue), context);
+                break;
+            case CommonLayoutParamsKey.LAYOUT_PARAMS_MARGIN_LEFT :
+                break;
+            case CommonLayoutParamsKey.LAYOUT_PARAMS_MARGIN_TOP :
+                break;
+            case CommonLayoutParamsKey.LAYOUT_PARAMS_MARGIN_RIGHT :
+                break;
+            case CommonLayoutParamsKey.LAYOUT_PARAMS_MARGIN_BOTTOM :
+                break;
+            case CommonLayoutParamsKey.LAYOUT_PARAMS_PADDING_LEFT :
+                break;
+            case CommonLayoutParamsKey.LAYOUT_PARAMS_PADDING_TOP :
+                break;
+            case CommonLayoutParamsKey.LAYOUT_PARAMS_PADDING_RIGHT :
+                break;
+            case CommonLayoutParamsKey.LAYOUT_PARAMS_PADDING_BOTTOM :
+                break;
+        }
+    }
+
+
     @Override
     View toList(View view, XmlPullParser parser) {
         return view;
@@ -94,23 +138,10 @@ public class ConverterImpl extends Converter{
 
     @Override
     View toScrollView(View view, XmlPullParser parser) {
-        AScrollView scrollView = (AScrollView)view;
-        if(parser != null)
-            for(int i = 0;i < parser.getAttributeCount();i ++){
-                renderScrollView(scrollView, scrollViewParamsMap.get(parser.getAttributeName(i))
-                                , parser.getAttributeValue(i));
-            }
 
         return null;
     }
 
-    void renderScrollView(AScrollView scrollView, int arg, String attrsValue){
-        if(scrollView != null && !TextUtils.isEmpty(attrsValue)){
-            switch (arg) {
-
-            }
-        }
-    }
 
     @Override
     View toLayout(View view, XmlPullParser parser) {
@@ -234,7 +265,7 @@ public class ConverterImpl extends Converter{
         return imageView;
     }
 
-    void renderImageView(AImageView imageView, int arg, String attrsValue){
+    void renderImageView(final AImageView imageView, int arg, String attrsValue){
         if(imageView != null && !TextUtils.isEmpty(attrsValue)){
             switch (arg) {
                 case ImageViewParamsKey.IMAGEVIEW_SRC:
@@ -242,8 +273,29 @@ public class ConverterImpl extends Converter{
                     break;
 
                 case ImageViewParamsKey.IMAGEVIEW_SCALETYPE:
-                    if(ScaleTypekey.SCALETYPE_FITXY.equals(attrsValue)){
+                    if(ScaleTypekey.SCALETYPE_MATRIX.equals(attrsValue)){
+                        imageView.setScaleType(ImageView.ScaleType.MATRIX);
+
+                    }else if(ScaleTypekey.SCALETYPE_FIT_XY.equals(attrsValue)){
                         imageView.setScaleType(ImageView.ScaleType.FIT_XY);
+
+                    }else if(ScaleTypekey.SCALETYPE_FIT_CENTER.equals(attrsValue)){
+                        imageView.setScaleType(ImageView.ScaleType.FIT_CENTER);
+
+                    }else if(ScaleTypekey.SCALETYPE_FIT_START.equals(attrsValue)){
+                        imageView.setScaleType(ImageView.ScaleType.FIT_START);
+
+                    }else if(ScaleTypekey.SCALETYPE_FIT_END.equals(attrsValue)){
+                        imageView.setScaleType(ImageView.ScaleType.FIT_END);
+
+                    }else if(ScaleTypekey.SCALETYPE_CENTER.equals(attrsValue)){
+                        imageView.setScaleType(ImageView.ScaleType.CENTER);
+
+                    }else if(ScaleTypekey.SCALETYPE_CENTER_CROP.equals(attrsValue)){
+                        imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
+
+                    }else if(ScaleTypekey.SCALETYPE_CENTER_INSIDE.equals(attrsValue)){
+                        imageView.setScaleType(ImageView.ScaleType.CENTER_INSIDE);
                     }
                     break;
             }
@@ -253,5 +305,14 @@ public class ConverterImpl extends Converter{
     @Override
     View toImageButton(View view, XmlPullParser parser) {
         return view;
+    }
+
+    public int px2dip(int paramInt, Context context) {
+        float f = getDensity(context);
+        return (int) ((paramInt - 0.5D) / f);
+    }
+
+    public float getDensity(Context paramContext) {
+        return paramContext.getResources().getDisplayMetrics().density;
     }
 }

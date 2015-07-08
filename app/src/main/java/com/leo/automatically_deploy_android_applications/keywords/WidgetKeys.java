@@ -4,7 +4,12 @@ package com.leo.automatically_deploy_android_applications.keywords;
  * Created by littleming on 15/7/2.
  */
 public class WidgetKeys {
+    //root layout
+    public static final String LINEARLAYOUT_DES_TAG         = "linearlayout";
+    public static final String ROOT_LINEARLAYOUT_DES_TAG    = "root-linearlayout";
+    public static final String LINEARLAYOUT_ANALYZE_TAG     = "ALinearLayout";
 
+    //widgets
     public static final String BUTTON_DES_TAG               = "button";
     public static final String BUTTON_ANALYZE_TAG           = "Abutton";
 
@@ -14,9 +19,7 @@ public class WidgetKeys {
     public static final String IMAGE_DES_TAG                = "image";
     public static final String IMAGE_ANALYZE_TAG            = "AImageView";
 
-    public static final String LINEARLAYOUT_DES_TAG         = "linearlayout";
-    public static final String ROOT_LINEARLAYOUT_DES_TAG    = "root-linearlayout";
-    public static final String LINEARLAYOUT_ANALYZE_TAG     = "ALinearLayout";
+
 
     @Deprecated
     public static final String RELATIVELAYOUT_DES_TAG       = "relativelayout";
