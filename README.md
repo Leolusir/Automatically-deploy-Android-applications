@@ -15,56 +15,85 @@ Describe your interface
         backgroundColor="#ececec"
         orientation="0">
 
-        <text
-            text="auto add 1"
-            textSize="20"
-            textColor="#fffb3a"
-            gravity="0">
-        </text>
-        <image
-            src="http://..."
-            scaleType="0">
-        </image>
-        <text
-            text="auto add 2"
-            textSize="24"
-            textColor="#ff0000"
-            gravity="0">
-        </text>
-        <image
-            src="http://..."
-            scaleType="0">
-        </image>
-        <text
-            text="auto add 3"
-            textSize="28"
-            textColor="#00ff00"
-            gravity="0">
-        </text>
-        <image
-            src="http://..."
-            scaleType="0">
-        </image>
-        <text
-            text="auto add 4"
-            textSize="32"
-            textColor="#FFFBB5"
-            gravity="0">
-        </text>
-        <image
-            src="http://..."
-            scaleType="0">
-        </image>
-        <text
-            text="auto add 5"
-            textSize="36"
-            textColor="#CC4BFF"
-            gravity="0">
-        </text>
-        <image
-            src="http://..."
-            scaleType="0">
-        </image>
+        <Item>
+            <text
+                text="auto add 1"
+                textSize="20"
+                textColor="#fffb3a"
+                gravity="0">
+            </text>
+        </Item>
+
+        <Item>
+            <image
+                src="http://..."
+                scaleType="0">
+            </image>
+        </Item>
+
+        <Item>
+            <text
+                text="auto add 2"
+                textSize="24"
+                textColor="#ff0000"
+                gravity="0">
+            </text>
+        </Item>
+
+        <Item>
+            <image
+                src="http://..."
+                scaleType="0">
+            </image>
+        </Item>
+
+        <Item>
+            <text
+                text="auto add 3"
+                textSize="28"
+                textColor="#00ff00"
+                gravity="0">
+            </text>
+        </Item>
+
+        <Item>
+            <image
+                src="http://..."
+                scaleType="0">
+            </image>
+        </Item>
+
+        <Item>
+            <text
+                text="auto add 4"
+                textSize="32"
+                textColor="#FFFBB5"
+                gravity="0">
+            </text>
+        </Item>
+
+        <Item>
+            <image
+                src="http://..."
+                scaleType="0">
+            </image>
+        </Item>
+
+        <Item>
+            <text
+                text="auto add 5"
+                textSize="36"
+                textColor="#CC4BFF"
+                gravity="0">
+            </text>
+        </Item>
+
+        <Item>
+            <image
+                src="http://..."
+                scaleType="0">
+            </image>
+        </Item>
 
     </layout-linear>
 ```
