@@ -2,18 +2,38 @@ package com.leo.automatically_deploy_android_applications;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.text.TextUtils;
 import android.view.Menu;
 import android.view.MenuItem;
+
+import com.leo.automatically_deploy_android_applications.Utils.ALog;
+import com.leo.automatically_deploy_android_applications.Utils.TypeConvertUtils;
+import com.leo.automatically_deploy_android_applications.core.decor.Generate;
+
+import java.io.InputStream;
 
 public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(App.getInstance().getGenerate().generateView(this));
 
-//        LayoutInflater inflater = LayoutInflater.from(this);
-//        inflater.inflate(R.layout.activity_main, null);
+        String xmlString = null;
+        try {
+            InputStream is = this.getAssets().open("desfile");
+            xmlString = TypeConvertUtils.InputStreamTOString(is, "UTF-8");
+            ALog.i("xml", xmlString + "");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        if(!TextUtils.isEmpty(xmlString)) {
+            Generate generate = new Generate();
+            generate.init(this);
+            setContentView(generate.generateView(xmlString));
+        }
+
+
     }
 
     @Override

@@ -7,14 +7,17 @@
                 text="auto add 1"
                 textSize="20"
                 textColor="#000000"
-                gravity="0">
+                gravity="0"
+                marginTop="50"
+                marginBottom="100">
             </text>
         </Item>
 
         <Item>
             <layout-linear
                     backgroundColor="#ececec"
-                    orientation="1">
+                    orientation="1"
+                    gravity="0">
 
                     <text
                                     text="嵌套"
@@ -31,6 +34,48 @@
                                     gravity="0">
                     </text>
 
+                                <layout-linear
+                                        backgroundColor="#ececec"
+                                        orientation="0">
+
+                                        <text
+                                                        text="嵌套"
+                                                        textSize="20"
+                                                        textColor="#ff0000"
+                                                        gravity="0">
+                                        </text>
+
+
+                                        <text
+                                                        text="嵌套"
+                                                        textSize="20"
+                                                        textColor="#00ff00"
+                                                        gravity="0">
+                                        </text>
+
+                                        <text
+                                                        text="嵌套"
+                                                        textSize="20"
+                                                        textColor="#0000ff"
+                                                        gravity="0">
+                                        </text>
+
+                                        <text
+                                                        text="嵌套"
+                                                        textSize="20"
+                                                        textColor="#ff0000"
+                                                        gravity="0">
+                                        </text>
+
+                                         <text
+                                                        text="嵌套"
+                                                        textSize="20"
+                                                        textColor="#ff0000"
+                                                        gravity="0">
+                                         </text>
+
+                                </layout-linear>
+
                     <text
                                     text="嵌套"
                                     textSize="20"
@@ -38,13 +83,24 @@
                                     gravity="0">
                     </text>
 
+                    <text
+                                    text="嵌套"
+                                    textSize="20"
+                                    textColor="#0000ff"
+                                    gravity="0">
+                   </text>
+
             </layout-linear>
+
         </Item>
 
         <Item>
             <image
+                width="full"
                 src="http://..."
-                scaleType="1">
+                scaleType="1"
+                marginLeft="50"
+                marginRight="50">
             </image>
         </Item>
 
@@ -59,8 +115,11 @@
 
         <Item>
             <image
-                src="http:..."
-                scaleType="1">
+                width="full"
+                src="http://..."
+                scaleType="1"
+                marginLeft="50"
+                marginRight="50">
             </image>
         </Item>
 
@@ -75,8 +134,11 @@
 
         <Item>
             <image
+                width="full"
                 src="http://..."
-                scaleType="1">
+                scaleType="1"
+                marginLeft="50"
+                marginRight="50">
             </image>
         </Item>
 
@@ -91,8 +153,11 @@
 
         <Item>
             <image
+                width="full"
                 src="http://..."
-                scaleType="1">
+                scaleType="1"
+                marginLeft="50"
+                marginRight="50">
             </image>
         </Item>
 
@@ -107,8 +172,11 @@
 
         <Item>
             <image
+                width="full"
                 src="http://..."
                 scaleType="1">
+                marginLeft="50"
+                marginRight="50"
             </image>
         </Item>
 

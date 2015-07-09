@@ -12,7 +12,4 @@ public class TextViewParamsKey {
     public static final String TEXTVIEW_TEXT_COLOR_DES  = "textColor";
     public static final int    TEXTVIEW_TEXT_COLOR      = 3;
 
-    public static final String TEXTVIEW_GRAVITY_DES     = "gravity";
-    public static final int    TEXTVIEW_GRAVITY         = 4;
-
 }

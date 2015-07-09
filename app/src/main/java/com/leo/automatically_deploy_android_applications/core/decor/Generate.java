@@ -7,16 +7,14 @@ import android.view.ViewGroup;
 import android.widget.ScrollView;
 
 import com.leo.automatically_deploy_android_applications.Utils.ALog;
+import com.leo.automatically_deploy_android_applications.Utils.TypeConvertUtils;
 import com.leo.automatically_deploy_android_applications.keywords.RootLayoutKeys;
 import com.leo.automatically_deploy_android_applications.keywords.WidgetKeys;
 
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
 import java.io.IOException;
-import java.io.InputStream;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import java.util.HashMap;
@@ -34,11 +32,10 @@ public class Generate {
     static final Class<?>[] ConstructorSignature = new Class[] {Context.class};
     private static final HashMap<String, Constructor<? extends View>> sConstructorMap = new HashMap<>();
 
-    final static int BUFFER_SIZE = 4096;
-
     private boolean canScroll = false;
 
-    public void init(){
+    public void init(Context context){
+        this.context = context;
         converter = new ConverterImpl();
         converter.init(context);
         parserMap.put(WidgetKeys.BUTTON_DES_TAG, WidgetKeys.BUTTON_ANALYZE_TAG);
@@ -55,12 +52,11 @@ public class Generate {
         parserMap.put(RootLayoutKeys.LAYOUT_LINEAR_DES, RootLayoutKeys.LAYOUT_LINEAR);
     }
 
-    public View generateView(Context context){
-        this.context = context;
+    public View generateView(String xmlString){
         View view = null;
 
         try {
-            view = Parser(context);
+            view = Parser(context, xmlString);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -68,15 +64,7 @@ public class Generate {
         return view;
     }
 
-    public View Parser(Context context) throws IOException {
-        InputStream is = context.getAssets().open("desfile");
-        String xmlString = null;
-        try {
-            xmlString = InputStreamTOString(is, "UTF-8");
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        ALog.i("xml", xmlString + "");
+    public View Parser(Context context, String xmlString) throws IOException {
         View view = generateLayout(xmlString);
 
         if(canScroll){
@@ -125,7 +113,7 @@ public class Generate {
 
     public View generateRootView(String des) throws Exception {
         XmlPullParser parser = Xml.newPullParser();
-        parser.setInput(StringTOInputStream(des), "UTF-8");
+        parser.setInput(TypeConvertUtils.StringTOInputStream(des), "UTF-8");
 
         View v = null;
         final int depth = parser.getDepth();
@@ -166,7 +154,7 @@ public class Generate {
         des = "<Item> \n" + des;
         XmlPullParser parser = Xml.newPullParser();
         try {
-            parser.setInput(StringTOInputStream(des), "UTF-8");
+            parser.setInput(TypeConvertUtils.StringTOInputStream(des), "UTF-8");
         } catch (Exception e) {
             //empty
         }
@@ -278,22 +266,8 @@ public class Generate {
         return v;
     }
 
-    public InputStream StringTOInputStream(String in) throws Exception{
-
-        ByteArrayInputStream is = new ByteArrayInputStream(in.getBytes("ISO-8859-1"));
-        return is;
-    }
-
-    public String InputStreamTOString(InputStream in,String encoding) throws Exception{
-
-        ByteArrayOutputStream outStream = new ByteArrayOutputStream();
-        byte[] data = new byte[BUFFER_SIZE];
-        int count = -1;
-        while((count = in.read(data,0,BUFFER_SIZE)) != -1)
-            outStream.write(data, 0, count);
-
-        data = null;
-        return new String(outStream.toByteArray(),"ISO-8859-1");
+    public void setContext(Context context) {
+        this.context = context;
     }
 
 }
