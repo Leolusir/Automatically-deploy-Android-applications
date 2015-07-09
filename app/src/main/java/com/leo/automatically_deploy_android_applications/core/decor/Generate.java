@@ -111,13 +111,13 @@ public class Generate {
                 String des = items[i].toString();
                 String[] xdes = des.split("</Item>");
                 des = "<Item> \n" + xdes[0] + "</Item>";
-                view = generateItemView(des);
+                generateItemView(rootView, des);
             } else {
-                view = generateItemView(items[i]);
+                generateItemView(rootView, items[i]);
             }
 
-            if (view != null)
-                rootView.addView(view);
+//            if (view != null)
+//                rootView.addView(view);
         }
 
         return rootView;
@@ -162,75 +162,117 @@ public class Generate {
         return v;
     }
 
-    public View generateItemView(String des) {
+    void generateItemView(View parent, String des) {
         des = "<Item> \n" + des;
         XmlPullParser parser = Xml.newPullParser();
         try {
             parser.setInput(StringTOInputStream(des), "UTF-8");
         } catch (Exception e) {
-            return null;
+            //empty
         }
 
-        View v = null;
+        try {
+            rInflate(parser, parent);
+        } catch (XmlPullParserException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+//        try {
+//            while (((type = parser.next()) != XmlPullParser.END_TAG ||
+//                    parser.getDepth() > depth) && type != XmlPullParser.END_DOCUMENT) {
+//                if (type != XmlPullParser.START_TAG) {
+//                    continue;
+//                }
+//
+//                final String desName = parser.getName();
+//                if("Item".equals(desName)){
+//                    ALog.i("name", "-------------");
+//                    ALog.i("name", desName + "");
+//                }else{
+//                    ALog.i("name", desName + "");
+//                    rInflate(parser, parent);
+
+//                    final String name = parserMap.get(parser.getName());
+//
+//                    Constructor<? extends View> constructor = sConstructorMap.get(name);
+//                    Class<? extends View> clazz = null;
+//                    final Object[] mConstructorArgs = new Object[1];
+//                    mConstructorArgs[0] = context;
+//
+//                    clazz = context.getClassLoader().loadClass(prefix != null ? (prefix + name) : name).asSubclass(View.class);
+//                    constructor = clazz.getConstructor(ConstructorSignature);
+//                    sConstructorMap.put(name, constructor);
+//                    constructor.setAccessible(true);
+//                    View view = constructor.newInstance(mConstructorArgs);
+//                    ALog.i("view", view.getClass().getSimpleName() + "");
+//
+//                    v = converter.converterView(view, parser);
+//                    ALog.i("add", "add_item");
+//                }
+//
+//            }
+//        } catch (Exception e) {
+//            ALog.e("AException", e.toString() + "");
+//            return null;
+//        }
+    }
+
+    void rInflate(XmlPullParser parser, View parent)
+            throws XmlPullParserException, IOException {
         final int depth = parser.getDepth();
         int type;
 
-        try {
-            while (((type = parser.next()) != XmlPullParser.END_TAG ||
-                    parser.getDepth() > depth) && type != XmlPullParser.END_DOCUMENT) {
-                if (type != XmlPullParser.START_TAG) {
-                    continue;
-                }
+        while (((type = parser.next()) != XmlPullParser.END_TAG ||
+                parser.getDepth() > depth) && type != XmlPullParser.END_DOCUMENT) {
 
-                final String desName = parser.getName();
-                if("Item".equals(desName)){
-                    ALog.i("name", "-------------");
-                    ALog.i("name", desName + "");
-                }else{
-                    ALog.i("name", desName + "");
-                    final String name = parserMap.get(parser.getName());
-
-                    Constructor<? extends View> constructor = sConstructorMap.get(name);
-                    Class<? extends View> clazz = null;
-                    final Object[] mConstructorArgs = new Object[1];
-                    mConstructorArgs[0] = context;
-
-                    clazz = context.getClassLoader().loadClass(prefix != null ? (prefix + name) : name).asSubclass(View.class);
-                    constructor = clazz.getConstructor(ConstructorSignature);
-                    sConstructorMap.put(name, constructor);
-                    constructor.setAccessible(true);
-                    View view = constructor.newInstance(mConstructorArgs);
-                    ALog.i("view", view.getClass().getSimpleName() + "");
-
-                    v = converter.converterView(view, parser);
-                    ALog.i("add", "add_item");
-                }
-
+            if (type != XmlPullParser.START_TAG) {
+                continue;
             }
-        } catch (XmlPullParserException e) {
-            ALog.e("AException", e.toString() + "");
-            return null;
-        } catch (IOException e) {
-            ALog.e("AException", e.toString() + "");
-            return null;
+
+            final String name = parser.getName();
+            if("Item".equals(name)){
+                ALog.i("name", "-------------");
+                ALog.i("name", name + "");
+            }else {
+                final View view = generateViewFromTag(parser, parent, parserMap.get(name));
+                final ViewGroup viewGroup = (ViewGroup) parent;
+                rInflate(parser, view);
+                viewGroup.addView(view);
+            }
+        }
+    }
+
+    private View generateViewFromTag(XmlPullParser parser, View parent, String name){
+        View v = null;
+        Constructor<? extends View> constructor = sConstructorMap.get(name);
+        Class<? extends View> clazz = null;
+        final Object[] mConstructorArgs = new Object[1];
+        mConstructorArgs[0] = context;
+
+        try {
+            clazz = context.getClassLoader().loadClass(prefix != null ? (prefix + name) : name).asSubclass(View.class);
+            constructor = clazz.getConstructor(ConstructorSignature);
+            sConstructorMap.put(name, constructor);
+            constructor.setAccessible(true);
+            View view = constructor.newInstance(mConstructorArgs);
+            ALog.i("view", view.getClass().getSimpleName() + "");
+
+            v = converter.converterView(view, parser);
+            ALog.i("add", "add_item");
         } catch (ClassNotFoundException e) {
-            ALog.e("AException", e.toString() + "");
-            return null;
-        } catch (NoSuchMethodException e) {
-            ALog.e("AException", e.toString() + "");
-            return null;
+            e.printStackTrace();
         } catch (InvocationTargetException e) {
-            ALog.e("AException", e.toString() + "");
-            return null;
+            e.printStackTrace();
+        } catch (NoSuchMethodException e) {
+            e.printStackTrace();
         } catch (InstantiationException e) {
-            ALog.e("AException", e.toString() + "");
-            return null;
+            e.printStackTrace();
         } catch (IllegalAccessException e) {
-            ALog.e("AException", e.toString() + "");
-            return null;
+            e.printStackTrace();
         } catch (Exception e) {
-            ALog.e("AException", e.toString() + "");
-            return null;
+            e.printStackTrace();
         }
 
         return v;
