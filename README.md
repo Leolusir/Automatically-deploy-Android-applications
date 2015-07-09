@@ -33,74 +33,73 @@ Describe your interface
                     gravity="0">
 
                     <text
-                                    text="嵌套"
-                                    textSize="20"
-                                    textColor="#ff0000"
-                                    gravity="0">
+                       text="嵌套"
+                       textSize="20"
+                       textColor="#ff0000"
+                       gravity="0">
                     </text>
 
 
                     <text
-                                    text="嵌套"
-                                    textSize="20"
-                                    textColor="#00ff00"
-                                    gravity="0">
+                       text="嵌套"
+                       textSize="20"
+                       textColor="#00ff00"
+                       gravity="0">
                     </text>
 
-                                <layout-linear
-                                        backgroundColor="#ececec"
-                                        orientation="0">
+                    <layout-linear
+                       backgroundColor="#ececec"
+                       orientation="0">
 
-                                        <text
-                                                        text="嵌套"
-                                                        textSize="20"
-                                                        textColor="#ff0000"
-                                                        gravity="0">
-                                        </text>
+                             <text
+                                 text="嵌套"
+                                 textSize="20"
+                                 textColor="#ff0000"
+                                 gravity="0">
+                             </text>
 
+                             <text
+                                 text="嵌套"
+                                 textSize="20"
+                                 textColor="#00ff00"
+                                 gravity="0">
+                             </text>
 
-                                        <text
-                                                        text="嵌套"
-                                                        textSize="20"
-                                                        textColor="#00ff00"
-                                                        gravity="0">
-                                        </text>
+                             <text
+                                 text="嵌套"
+                                 textSize="20"
+                                 textColor="#0000ff"
+                                 gravity="0">
+                             </text>
 
-                                        <text
-                                                        text="嵌套"
-                                                        textSize="20"
-                                                        textColor="#0000ff"
-                                                        gravity="0">
-                                        </text>
+                             <text
+                                 text="嵌套"
+                                 textSize="20"
+                                 textColor="#ff0000"
+                                 gravity="0">
+                             </text>
 
-                                        <text
-                                                        text="嵌套"
-                                                        textSize="20"
-                                                        textColor="#ff0000"
-                                                        gravity="0">
-                                        </text>
+                             <text
+                                 text="嵌套"
+                                 textSize="20"
+                                 textColor="#ff0000"
+                                 gravity="0">
+                             </text>
 
-                                         <text
-                                                        text="嵌套"
-                                                        textSize="20"
-                                                        textColor="#ff0000"
-                                                        gravity="0">
-                                         </text>
-
-                                </layout-linear>
+                    </layout-linear>
 
                     <text
-                                    text="嵌套"
-                                    textSize="20"
-                                    textColor="#0000ff"
-                                    gravity="0">
+                        text="嵌套"
+                        textSize="20"
+                        textColor="#0000ff"
+                        gravity="0">
                     </text>
 
                     <text
-                                    text="嵌套"
-                                    textSize="20"
-                                    textColor="#0000ff"
-                                    gravity="0">
+                        text="嵌套"
+                        textSize="20"
+                        textColor="#0000ff"
+                        gravity="0">
                    </text>
 
             </layout-linear>
