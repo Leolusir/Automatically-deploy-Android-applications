@@ -19,15 +19,101 @@ Describe your interface
             <text
                 text="auto add 1"
                 textSize="20"
-                textColor="#fffb3a"
-                gravity="0">
+                textColor="#000000"
+                gravity="0"
+                marginTop="50"
+                marginBottom="100">
             </text>
         </Item>
 
         <Item>
+            <layout-linear
+                    backgroundColor="#ececec"
+                    orientation="1"
+                    gravity="0">
+
+                    <text
+                                    text="嵌套"
+                                    textSize="20"
+                                    textColor="#ff0000"
+                                    gravity="0">
+                    </text>
+
+
+                    <text
+                                    text="嵌套"
+                                    textSize="20"
+                                    textColor="#00ff00"
+                                    gravity="0">
+                    </text>
+
+                                <layout-linear
+                                        backgroundColor="#ececec"
+                                        orientation="0">
+
+                                        <text
+                                                        text="嵌套"
+                                                        textSize="20"
+                                                        textColor="#ff0000"
+                                                        gravity="0">
+                                        </text>
+
+
+                                        <text
+                                                        text="嵌套"
+                                                        textSize="20"
+                                                        textColor="#00ff00"
+                                                        gravity="0">
+                                        </text>
+
+                                        <text
+                                                        text="嵌套"
+                                                        textSize="20"
+                                                        textColor="#0000ff"
+                                                        gravity="0">
+                                        </text>
+
+                                        <text
+                                                        text="嵌套"
+                                                        textSize="20"
+                                                        textColor="#ff0000"
+                                                        gravity="0">
+                                        </text>
+
+                                         <text
+                                                        text="嵌套"
+                                                        textSize="20"
+                                                        textColor="#ff0000"
+                                                        gravity="0">
+                                         </text>
+
+                                </layout-linear>
+
+                    <text
+                                    text="嵌套"
+                                    textSize="20"
+                                    textColor="#0000ff"
+                                    gravity="0">
+                    </text>
+
+                    <text
+                                    text="嵌套"
+                                    textSize="20"
+                                    textColor="#0000ff"
+                                    gravity="0">
+                   </text>
+
+            </layout-linear>
+
+        </Item>
+
+        <Item>
             <image
+                width="full"
                 src="http://..."
-                scaleType="0">
+                scaleType="1"
+                marginLeft="50"
+                marginRight="50">
             </image>
         </Item>
 
@@ -35,15 +121,18 @@ Describe your interface
             <text
                 text="auto add 2"
                 textSize="24"
-                textColor="#ff0000"
+                textColor="#000000"
                 gravity="0">
             </text>
         </Item>
 
         <Item>
             <image
+                width="full"
                 src="http://..."
-                scaleType="0">
+                scaleType="1"
+                marginLeft="50"
+                marginRight="50">
             </image>
         </Item>
 
@@ -51,15 +140,18 @@ Describe your interface
             <text
                 text="auto add 3"
                 textSize="28"
-                textColor="#00ff00"
+                textColor="#000000"
                 gravity="0">
             </text>
         </Item>
 
         <Item>
             <image
+                width="full"
                 src="http://..."
-                scaleType="0">
+                scaleType="1"
+                marginLeft="50"
+                marginRight="50">
             </image>
         </Item>
 
@@ -67,15 +159,18 @@ Describe your interface
             <text
                 text="auto add 4"
                 textSize="32"
-                textColor="#FFFBB5"
+                textColor="#000000"
                 gravity="0">
             </text>
         </Item>
 
         <Item>
             <image
+                width="full"
                 src="http://..."
-                scaleType="0">
+                scaleType="1"
+                marginLeft="50"
+                marginRight="50">
             </image>
         </Item>
 
@@ -83,15 +178,18 @@ Describe your interface
             <text
                 text="auto add 5"
                 textSize="36"
-                textColor="#CC4BFF"
+                textColor="#000000"
                 gravity="0">
             </text>
         </Item>
 
         <Item>
             <image
+                width="full"
                 src="http://..."
-                scaleType="0">
+                scaleType="1">
+                marginLeft="50"
+                marginRight="50"
             </image>
         </Item>
 
@@ -100,7 +198,7 @@ Describe your interface
 
 then will Automated assembly
 
-![image](https://github.com/Leolusir/Automatically-deploy-Android-applications/blob/master/image/image2.png)
+![image](https://github.com/Leolusir/Automatically-deploy-Android-applications/blob/master/image/image3.png)
 
 
 
