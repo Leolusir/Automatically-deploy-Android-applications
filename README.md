@@ -33,7 +33,7 @@ Describe your interface
                     gravity="0">
 
                     <text
-                       text="嵌套"
+                       text="nest-1"
                        textSize="20"
                        textColor="#ff0000"
                        gravity="0">
@@ -41,7 +41,7 @@ Describe your interface
 
 
                     <text
-                       text="嵌套"
+                       text="nest-1"
                        textSize="20"
                        textColor="#00ff00"
                        gravity="0">
@@ -52,35 +52,35 @@ Describe your interface
                        orientation="0">
 
                              <text
-                                 text="嵌套"
+                                 text="nest-2"
                                  textSize="20"
                                  textColor="#ff0000"
                                  gravity="0">
                              </text>
 
                              <text
-                                 text="嵌套"
+                                 text="nest-2"
                                  textSize="20"
                                  textColor="#00ff00"
                                  gravity="0">
                              </text>
 
                              <text
-                                 text="嵌套"
+                                 text="nest-2"
                                  textSize="20"
                                  textColor="#0000ff"
                                  gravity="0">
                              </text>
 
                              <text
-                                 text="嵌套"
+                                 text="nest-2"
                                  textSize="20"
                                  textColor="#ff0000"
                                  gravity="0">
                              </text>
 
                              <text
-                                 text="嵌套"
+                                 text="nest-2"
                                  textSize="20"
                                  textColor="#ff0000"
                                  gravity="0">
@@ -89,14 +89,14 @@ Describe your interface
                     </layout-linear>
 
                     <text
-                        text="嵌套"
+                        text="nest-1"
                         textSize="20"
                         textColor="#0000ff"
                         gravity="0">
                     </text>
 
                     <text
-                        text="嵌套"
+                        text="nest-1"
                         textSize="20"
                         textColor="#0000ff"
                         gravity="0">
