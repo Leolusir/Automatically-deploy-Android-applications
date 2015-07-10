@@ -15,7 +15,7 @@ Describe your interface
         backgroundColor="#ececec"
         orientation="0">
 
-        <Item>
+
             <text
                 text="auto add 1"
                 textSize="20"
@@ -24,9 +24,9 @@ Describe your interface
                 marginTop="50"
                 marginBottom="100">
             </text>
-        </Item>
 
-        <Item>
+
+
             <layout-linear
                     backgroundColor="#ececec"
                     orientation="1"
@@ -104,9 +104,9 @@ Describe your interface
 
             </layout-linear>
 
-        </Item>
 
-        <Item>
+
+
             <image
                 width="full"
                 src="http://..."
@@ -114,18 +114,18 @@ Describe your interface
                 marginLeft="50"
                 marginRight="50">
             </image>
-        </Item>
 
-        <Item>
+
+
             <text
                 text="auto add 2"
                 textSize="24"
                 textColor="#000000"
                 gravity="0">
             </text>
-        </Item>
 
-        <Item>
+
+
             <image
                 width="full"
                 src="http://..."
@@ -133,18 +133,18 @@ Describe your interface
                 marginLeft="50"
                 marginRight="50">
             </image>
-        </Item>
 
-        <Item>
+
+
             <text
                 text="auto add 3"
                 textSize="28"
                 textColor="#000000"
                 gravity="0">
             </text>
-        </Item>
 
-        <Item>
+
+
             <image
                 width="full"
                 src="http://..."
@@ -152,18 +152,18 @@ Describe your interface
                 marginLeft="50"
                 marginRight="50">
             </image>
-        </Item>
 
-        <Item>
+
+
             <text
                 text="auto add 4"
                 textSize="32"
                 textColor="#000000"
                 gravity="0">
             </text>
-        </Item>
 
-        <Item>
+
+
             <image
                 width="full"
                 src="http://..."
@@ -171,18 +171,18 @@ Describe your interface
                 marginLeft="50"
                 marginRight="50">
             </image>
-        </Item>
 
-        <Item>
+
+
             <text
                 text="auto add 5"
                 textSize="36"
                 textColor="#000000"
                 gravity="0">
             </text>
-        </Item>
 
-        <Item>
+
+
             <image
                 width="full"
                 src="http://..."
@@ -190,7 +190,7 @@ Describe your interface
                 marginLeft="50"
                 marginRight="50"
             </image>
-        </Item>
+
 
     </layout-linear>
 ```

@@ -107,6 +107,8 @@ public class ConverterImpl extends Converter{
                 if (commonLayoutParamsMap.get(parser.getAttributeName(i)) != null) {
                     renderCommonParams(view, commonLayoutParamsMap.get(parser.getAttributeName(i)),
                             parser.getAttributeValue(i), lp);
+                } else {
+                    ALog.e("keyErr" , "this type is not supported now -- " + parser.getAttributeName(i));
                 }
             }
         }
@@ -221,7 +223,7 @@ public class ConverterImpl extends Converter{
                     renderLinearLayout(linearLayout, linearLayoutParamsMap.get(parser.getAttributeName(i)),
                             parser.getAttributeValue(i));
                 } else {
-                    ALog.e("keyErr" , "this type is not supported now -- " + parser.getAttributeValue(i));
+                    ALog.e("keyErr" , "this type is not supported now -- " + parser.getAttributeName(i));
                 }
             }
         }
@@ -279,7 +281,7 @@ public class ConverterImpl extends Converter{
                     renderTextView(textView, textViewParamsMap.get(parser.getAttributeName(i)),
                             parser.getAttributeValue(i));
                 }  else {
-                    ALog.e("keyErr" , "this type is not supported now -- " + parser.getAttributeValue(i));
+                    ALog.e("keyErr" , "this type is not supported now -- " + parser.getAttributeName(i));
                 }
             }
         }
@@ -317,7 +319,7 @@ public class ConverterImpl extends Converter{
                     renderImageView(imageView, imageViewParamsMap.get(parser.getAttributeName(i)),
                             parser.getAttributeValue(i));
                 } else {
-                    ALog.e("keyErr" , "this type is not supported now -- " + parser.getAttributeValue(i));
+                    ALog.e("keyErr" , "this type is not supported now -- " + parser.getAttributeName(i));
                 }
             }
         }

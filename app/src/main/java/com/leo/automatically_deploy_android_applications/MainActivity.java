@@ -33,7 +33,6 @@ public class MainActivity extends AppCompatActivity {
             setContentView(generate.generateView(xmlString));
         }
 
-
     }
 
     @Override

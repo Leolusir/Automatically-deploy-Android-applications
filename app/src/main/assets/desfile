@@ -2,7 +2,7 @@
         backgroundColor="#ececec"
         orientation="0">
 
-        <Item>
+
             <text
                 text="auto add 1"
                 textSize="20"
@@ -11,16 +11,15 @@
                 marginTop="50"
                 marginBottom="100">
             </text>
-        </Item>
 
-        <Item>
+
             <layout-linear
                     backgroundColor="#ececec"
                     orientation="1"
                     gravity="0">
 
                     <text
-                                    text="嵌套"
+                                    text="nest-1"
                                     textSize="20"
                                     textColor="#ff0000"
                                     gravity="0">
@@ -28,9 +27,9 @@
 
 
                     <text
-                                    text="嵌套"
+                                    text="nest-1"
                                     textSize="20"
-                                    textColor="#00ff00"
+                                    textColor="#ff0000"
                                     gravity="0">
                     </text>
 
@@ -39,145 +38,143 @@
                                         orientation="0">
 
                                         <text
-                                                        text="嵌套"
+                                                        text="nest-2"
                                                         textSize="20"
-                                                        textColor="#ff0000"
+                                                        textColor="#00ff00"
                                                         gravity="0">
                                         </text>
 
 
                                         <text
-                                                        text="嵌套"
+                                                        text="nest-2"
                                                         textSize="20"
                                                         textColor="#00ff00"
                                                         gravity="0">
                                         </text>
 
                                         <text
-                                                        text="嵌套"
+                                                        text="nest-2"
                                                         textSize="20"
-                                                        textColor="#0000ff"
+                                                        textColor="#00ff00"
                                                         gravity="0">
                                         </text>
 
                                         <text
-                                                        text="嵌套"
+                                                        text="nest-2"
                                                         textSize="20"
-                                                        textColor="#ff0000"
+                                                        textColor="#00ff00"
                                                         gravity="0">
                                         </text>
 
                                          <text
-                                                        text="嵌套"
+                                                        text="nest-2"
                                                         textSize="20"
-                                                        textColor="#ff0000"
+                                                        textColor="#00ff00"
                                                         gravity="0">
                                          </text>
 
                                 </layout-linear>
 
                     <text
-                                    text="嵌套"
+                                    text="nest-1"
                                     textSize="20"
-                                    textColor="#0000ff"
+                                    textColor="#ff0000"
                                     gravity="0">
                     </text>
 
                     <text
-                                    text="嵌套"
+                                    text="nest-1"
                                     textSize="20"
-                                    textColor="#0000ff"
+                                    textColor="#ff0000"
                                     gravity="0">
                    </text>
 
             </layout-linear>
 
-        </Item>
 
-        <Item>
+
             <image
                 width="full"
-                src="http://..."
+                src="http://m.chanyouji.cn/articles/591/154874020e8c668251a028d512201633.jpg"
                 scaleType="1"
                 marginLeft="50"
                 marginRight="50">
             </image>
-        </Item>
 
-        <Item>
+
+
             <text
                 text="auto add 2"
                 textSize="24"
                 textColor="#000000"
                 gravity="0">
             </text>
-        </Item>
 
-        <Item>
+
             <image
                 width="full"
-                src="http://..."
+                src="http://m.chanyouji.cn/articles/534/51b6a7a15a4c35948f09cfb4ec6bfe69.jpg"
                 scaleType="1"
                 marginLeft="50"
                 marginRight="50">
             </image>
-        </Item>
 
-        <Item>
+
+
             <text
                 text="auto add 3"
                 textSize="28"
                 textColor="#000000"
                 gravity="0">
             </text>
-        </Item>
 
-        <Item>
+
+
             <image
                 width="full"
-                src="http://..."
+                src="http://m.chanyouji.cn/articles/573/eb25779a20b80a891397325aeeebc715.jpg"
                 scaleType="1"
                 marginLeft="50"
                 marginRight="50">
             </image>
-        </Item>
 
-        <Item>
+
+
             <text
                 text="auto add 4"
                 textSize="32"
                 textColor="#000000"
                 gravity="0">
             </text>
-        </Item>
 
-        <Item>
+
+
             <image
                 width="full"
-                src="http://..."
+                src="http://p.chanyouji.cn/30430/1364992985393p17n7ulva1re2aod793j8lap2b.jpg"
                 scaleType="1"
                 marginLeft="50"
                 marginRight="50">
             </image>
-        </Item>
 
-        <Item>
+
+
             <text
                 text="auto add 5"
                 textSize="36"
                 textColor="#000000"
                 gravity="0">
             </text>
-        </Item>
 
-        <Item>
+
+
             <image
                 width="full"
-                src="http://..."
+                src="http://m.chanyouji.cn/articles/566/32d04d67d0d9a2bfe52004402a3116c9.jpg"
                 scaleType="1">
                 marginLeft="50"
                 marginRight="50"
             </image>
-        </Item>
+
 
     </layout-linear>
